@@ -8,8 +8,10 @@ defmodule HelloWeb.PageController do
   end
 
   defp tagging do
+    Appsignal.Tracer.root_span
+    |> Appsignal.Span.set_sample_data("tags", %{locale: "en"})
     # Adding sample data example (https://docs.appsignal.com/elixir/instrumentation/tagging.html)
-    Appsignal.Span.set_sample_data(Appsignal.Tracer.current_span, "params", %{locale: "en"})
+    # Appsignal.Span.set_sample_data(Appsignal.Tracer.current_span, "params", %{locale: "en"})
 
     # the syntax might not be correct
     # Appsignal.Span.set_sample_data(Appsignal.Tracer.current_span, "somekey", "somevalue")
