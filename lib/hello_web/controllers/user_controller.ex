@@ -8,7 +8,7 @@ defmodule HelloWeb.UserController do
 
   defp set_appsignal_namespace(conn, _params) do
     # Configures all actions in this controller to report
-    # in the "admin" namespace
+    # in the "user" namespace
     Appsignal.Span.set_namespace(Appsignal.Tracer.current_span(), "user")
     conn
   end
