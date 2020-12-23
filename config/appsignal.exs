@@ -5,6 +5,5 @@ config :appsignal, :config,
   name: "hello",
   push_api_key: "a1d7abab-dcbf-464b-a546-bb535e6ec73c",
   env: Mix.env,
-  log_path: "logs",
-  ignore_errors: ["Phoenix.Router.NoRouteError"]
+  log_path: "logs"
 

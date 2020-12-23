@@ -20,7 +20,7 @@ defmodule Hello.MixProject do
   def application do
     [
       mod: {Hello.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :absinthe_plug]
     ]
   end
 
@@ -45,7 +45,12 @@ defmodule Hello.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:appsignal_phoenix, "~> 2.0"}
+      {:appsignal_phoenix, "~> 2.0"},
+      {:phoenix_live_view, "~> 0.15.0"},
+      {:floki, ">= 0.27.0", only: :test},
+      {:absinthe_plug, "~> 1.5.0"},
+      {:absinthe, "~> 1.5.0"}
+
     ]
   end
 

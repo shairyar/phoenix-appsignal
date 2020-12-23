@@ -19,12 +19,14 @@ defmodule HelloWeb.Router do
     get "/", PageController, :index
     resources "/users", UserController
   end
-  
+
 
   # Other scopes may use custom stacks.
-  # scope "/api", HelloWeb do
-  #   pipe_through :api
-  # end
+  scope "/api" do
+    pipe_through :api
+    forward "/graphiql", Absinthe.Plug.GraphiQL, schema: Hello.Schema
+
+  end
 
   # Enables LiveDashboard only for development
   #
